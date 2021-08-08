@@ -9,7 +9,7 @@ class AuthWidgets {
   AuthWidgets({required this.viewModel});
 
   Widget logo(){
-    return Image.asset(AppImages.getImage("logo.png"));
+    return Image.asset(AppImages.getPngImage("logo"));
   }
 
   Widget emailField() {
