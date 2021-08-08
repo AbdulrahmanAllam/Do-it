@@ -1,3 +1,4 @@
+import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomMaterialButton extends StatelessWidget {
@@ -12,8 +13,8 @@ class CustomMaterialButton extends StatelessWidget {
       width: double.infinity,
       child: MaterialButton(
         onPressed: onPressed,
-        color: Colors.amber,
-        child: Text("$text"),
+        color: AppColors.black,
+        child: Text("$text",style: TextStyle(color: AppColors.white,fontWeight: FontWeight.bold),),
       ),
     );
   }

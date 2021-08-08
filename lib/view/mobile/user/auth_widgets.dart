@@ -1,3 +1,4 @@
+import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/utils/app_images.dart';
 import 'package:do_it_flutter/utils/widgets/custom_text_form_field.dart';
 import 'package:do_it_flutter/utils/widgets/cutom_material_button.dart';
@@ -9,7 +10,7 @@ class AuthWidgets {
   AuthWidgets({required this.viewModel});
 
   Widget logo(){
-    return Image.asset(AppImages.getPngImage("logo"));
+    return Image.asset(AppImages.getPngImage("logo"),height: 100,);
   }
 
   Widget emailField() {
@@ -39,17 +40,19 @@ class AuthWidgets {
       children: [
         Expanded(
           child: Divider(
-            height: 30,
-            thickness: 2 ,
+            height: double.infinity,
+            thickness: 1 ,
+            color: AppColors.black,
           ),
         ),
         SizedBox(width: 10,),
-        Text("or"),
+        Text("or",style: TextStyle(fontSize: 15),),
         SizedBox(width: 10,),
         Expanded(
           child: Divider(
-            height: 30,
-            thickness: 2 ,
+            height: double.infinity,
+            thickness: 1 ,
+            color: AppColors.black,
           ),
         ),
       ],

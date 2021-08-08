@@ -1,3 +1,4 @@
+import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -12,11 +13,16 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: AppColors.black,
       validator:validator,
       onSaved: onSaved,
       decoration: InputDecoration(
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: AppColors.black),
+        ),
+
         hintText: hintText,
-        prefixIcon: Icon(icon),
+        prefixIcon: Icon(icon,color: AppColors.black,),
         // icon: Icon(Icons.email),
       ),
     );
