@@ -20,19 +20,16 @@ class MyApp extends StatelessWidget {
       // builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          iconTheme: IconThemeData(
-            color: AppColors.black
+          appBarTheme: AppBarTheme(
+            iconTheme: IconThemeData(color: AppColors.black),
+            color: AppColors.white,
+            elevation: 0,
           ),
-          color: AppColors.white,
-          elevation: 0,
-        ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: AppColors.black,
-          elevation: 0.0,
-        ),
-        scaffoldBackgroundColor: AppColors.white
-      ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: AppColors.black,
+            elevation: 0.0,
+          ),
+          scaffoldBackgroundColor: AppColors.white),
       initialRoute: LogInView.route,
       routes: routes,
     );

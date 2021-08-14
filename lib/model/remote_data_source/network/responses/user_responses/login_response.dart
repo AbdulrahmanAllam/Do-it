@@ -1,6 +1,6 @@
 import '../base_response.dart';
 
-class LoginResponse implements BaseResponse{
+class LoginResponse implements BaseResponse {
   String? jwt;
   LoginResponseUser? user;
 

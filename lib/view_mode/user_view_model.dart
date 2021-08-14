@@ -55,7 +55,8 @@ class UserViewModel extends ChangeNotifier {
           onSuccess: (response) {
             UserObject user =
                 UserObject(id: response.user!.id!, token: response.jwt!);
-            _repository.saveUser(user).then((value) => Navigator.pushReplacementNamed(context, route));
+            _repository.saveUser(user).then(
+                (value) => Navigator.pushReplacementNamed(context, route));
           });
     }
   }
@@ -69,7 +70,8 @@ class UserViewModel extends ChangeNotifier {
           onSuccess: (response) {
             UserObject user =
                 UserObject(id: response.user!.id!, token: response.jwt!);
-            _repository.saveUser(user).then((value) => Navigator.pushReplacementNamed(context, route));
+            _repository.saveUser(user).then(
+                (value) => Navigator.pushReplacementNamed(context, route));
           });
     }
   }

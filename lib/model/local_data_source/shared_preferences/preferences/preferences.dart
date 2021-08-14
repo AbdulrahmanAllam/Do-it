@@ -5,8 +5,7 @@ import 'package:do_it_flutter/model/objects/user_object.dart';
 import 'package:do_it_flutter/utils/log.dart';
 import '../shared_preferences_services.dart';
 
-class Preferences implements UserPreferences{
-
+class Preferences implements UserPreferences {
   @override
   Future<bool> saveUser(UserObject user) async {
     Map<String, dynamic> map = {
@@ -14,7 +13,9 @@ class Preferences implements UserPreferences{
       UserPreferencesConstants.userToken: user.token,
     };
     String data = jsonEncode(map);
-    return await SharedPreferencesServices.setString(UserPreferencesConstants.user, data).then((value) => Log.information("user saved"));
+    return await SharedPreferencesServices.setString(
+            UserPreferencesConstants.user, data)
+        .then((value) => Log.information("user saved"));
   }
 
   @override

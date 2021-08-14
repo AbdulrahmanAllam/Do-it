@@ -9,12 +9,15 @@ class CustomMaterialButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40  ,
+      height: 40,
       width: double.infinity,
       child: MaterialButton(
         onPressed: onPressed,
         color: AppColors.black,
-        child: Text("$text",style: TextStyle(color: AppColors.white,fontWeight: FontWeight.bold),),
+        child: Text(
+          "$text",
+          style: TextStyle(color: AppColors.white, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

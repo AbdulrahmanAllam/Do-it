@@ -1,4 +1,5 @@
 import 'package:do_it_flutter/utils/app_colors.dart';
+import 'package:do_it_flutter/utils/app_height.dart';
 import 'package:do_it_flutter/utils/widgets/custom_app_bar.dart';
 import 'package:do_it_flutter/view/mobile/task/tasks_list_view.dart';
 import 'package:do_it_flutter/view/mobile/user/user_widgets.dart';
@@ -18,38 +19,37 @@ class LogInView extends StatelessWidget {
       create: (context) => UserViewModel(),
       child: Scaffold(
         appBar: customAppBar(title: "Log In", centerTitle: true),
-        body:SingleChildScrollView(
-          child: Consumer<UserViewModel>(
-            builder: (context, viewModel, child){
-              return Form(
-                key: viewModel.formKey,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      SizedBox(height: 50,),
-                      authWidgets.logo(),
-                      SizedBox(height: 50,),
-                      authWidgets.emailField(),
-                      SizedBox(height: 20,),
-                      authWidgets.passwordField(),
-                      SizedBox(height: 50,),
-                      authWidgets.loginButton(onPressed: (){
-                        //viewModel.login(context: context,route: ProfileView.route);
-                        Navigator.pushReplacementNamed(context, TasksListView.route);
-                      }),
-                      authWidgets.orDivider(),
-                      authWidgets.signUpButton(onPressed: (){
-                        Navigator.pushNamed(context, SignUpView.route);
-                      }),
-                    ],
-                  ),
+        body: SingleChildScrollView(
+          child: Consumer<UserViewModel>(builder: (context, viewModel, child) {
+            return Form(
+              key: viewModel.formKey,
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    AppHeight.h50,
+                    authWidgets.logo(),
+                    AppHeight.h50,
+                    authWidgets.emailField(),
+                    AppHeight.h20,
+                    authWidgets.passwordField(),
+                    AppHeight.h50,
+                    authWidgets.loginButton(onPressed: () {
+                      //viewModel.login(context: context,route: ProfileView.route);
+                      Navigator.pushReplacementNamed(
+                          context, TasksListView.route);
+                    }),
+                    authWidgets.orDivider,
+                    authWidgets.signUpButton(onPressed: () {
+                      Navigator.pushNamed(context, SignUpView.route);
+                    }),
+                  ],
                 ),
-              );
-            }
-          ),
+              ),
+            );
+          }),
         ),
       ),
     );

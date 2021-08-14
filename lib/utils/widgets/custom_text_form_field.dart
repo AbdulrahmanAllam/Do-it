@@ -9,7 +9,13 @@ class CustomTextFormField extends StatelessWidget {
   int? maxLength;
   int? maxLines;
 
-  CustomTextFormField({this.validator, this.onSaved, this.icon, this.hintText, this.maxLength, this.maxLines});
+  CustomTextFormField(
+      {this.validator,
+      this.onSaved,
+      this.icon,
+      this.hintText,
+      this.maxLength,
+      this.maxLines});
 
   @override
   Widget build(BuildContext context) {

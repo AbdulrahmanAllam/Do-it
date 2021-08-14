@@ -2,19 +2,18 @@ import 'package:do_it_flutter/model/local_data_source/shared_preferences/prefere
 import 'package:do_it_flutter/model/objects/user_object.dart';
 import 'package:do_it_flutter/utils/log.dart';
 
-class LocalDataSource{
+class LocalDataSource {
   Preferences _preferences = Preferences();
 
   Future<bool> saveUser(UserObject user) async {
     return await _preferences.saveUser(user);
   }
 
-  Future<UserObject> getUser() async{
+  Future<UserObject> getUser() async {
     return _preferences.getUser();
   }
 
-  void logOut(){
+  void logOut() {
     _preferences.logOut();
   }
-
 }

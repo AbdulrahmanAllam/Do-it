@@ -6,7 +6,7 @@ import 'package:do_it_flutter/model/remote_data_source/network/responses/user_re
 import 'package:do_it_flutter/utils/enums/network_methods.dart';
 import '../network_services.dart';
 
-class Apis implements UserApis, TaskApis{
+class Apis implements UserApis, TaskApis {
   Preferences _preferences = Preferences();
   @override
   void changePassword() {
@@ -49,7 +49,8 @@ class Apis implements UserApis, TaskApis{
     required String password,
     Function(RegisterResponse)? onSuccess,
     Function(String? message, int? code)? onResponseError,
-    Function(String? message)? onError,}) {
+    Function(String? message)? onError,
+  }) {
     Map<String, String> data = {
       "username": "$userName",
       "email": "$email",

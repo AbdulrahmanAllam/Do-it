@@ -7,7 +7,12 @@ class UserObject {
   String? _email;
   String? _image;
 
-  UserObject({required int id, required String token, String? name, String? email, String? image}) {
+  UserObject(
+      {required int id,
+      required String token,
+      String? name,
+      String? email,
+      String? image}) {
     this.id = id;
     this.token = token;
     this.name = name;
@@ -32,9 +37,9 @@ class UserObject {
 
   int get id => _id;
   set id(int value) {
-    if(value > 0) {
+    if (value > 0) {
       _id = value;
-    }else{
+    } else {
       Log.error("id can't must be more than 0");
     }
   }

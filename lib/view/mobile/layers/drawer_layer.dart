@@ -1,0 +1,23 @@
+import 'package:do_it_flutter/view/mobile/category/categoryies_list_view.dart';
+import 'package:flutter/material.dart';
+
+class DrawerLayer extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: SafeArea(
+        child: Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, CategoriesListView.route);
+              },
+              child: Text("categories"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

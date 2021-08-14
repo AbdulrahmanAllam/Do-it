@@ -1,4 +1,5 @@
 import 'package:do_it_flutter/utils/app_colors.dart';
+import 'package:do_it_flutter/utils/app_height.dart';
 import 'package:do_it_flutter/utils/widgets/custom_app_bar.dart';
 import 'package:do_it_flutter/utils/widgets/custom_text_form_field.dart';
 import 'package:do_it_flutter/view/mobile/user/profile_view.dart';
@@ -34,34 +35,25 @@ class SignUpView extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 50,
-                    ),
+                    AppHeight.h50,
                     authWidgets.logo(),
-                    SizedBox(
-                      height: 50,
-                    ),
+                    AppHeight.h50,
                     CustomTextFormField(
                       hintText: "user name",
                       icon: Icons.person,
                       validator: (value) => viewModel.validateUserName(value),
                       onSaved: (value) => viewModel.userName = value,
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    AppHeight.h20,
                     authWidgets.emailField(),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    AppHeight.h20,
                     authWidgets.passwordField(),
-                    SizedBox(
-                      height: 50,
-                    ),
+                    AppHeight.h50,
                     authWidgets.signUpButton(onPressed: () {
-                      viewModel.signUp(context: context,route: ProfileView.route);
+                      viewModel.signUp(
+                          context: context, route: ProfileView.route);
                     }),
-                    authWidgets.orDivider(),
+                    authWidgets.orDivider,
                     authWidgets.loginButton(onPressed: () {
                       Navigator.pop(context);
                     }),

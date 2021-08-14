@@ -8,7 +8,8 @@ abstract class UserApis {
     required String password,
     Function(RegisterResponse)? onSuccess,
     Function(String? message, int? code)? onResponseError,
-    Function(String? message)? onError,});
+    Function(String? message)? onError,
+  });
 
   void logIn({
     required String email,
