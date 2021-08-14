@@ -47,7 +47,7 @@ class UserViewModel extends ChangeNotifier {
     }
   }
 
-  void login() {
+  void login({required BuildContext context, required String route}) {
     if (_formValidate()) {
       _repository.login(
           email: _email!,
@@ -55,12 +55,12 @@ class UserViewModel extends ChangeNotifier {
           onSuccess: (response) {
             UserObject user =
                 UserObject(id: response.user!.id!, token: response.jwt!);
-            _repository.saveUser(user);
+            _repository.saveUser(user).then((value) => Navigator.pushReplacementNamed(context, route));
           });
     }
   }
 
-  void signUp() {
+  void signUp({required BuildContext context, required String route}) {
     if (_formValidate()) {
       _repository.signUp(
           userName: _userName!,
@@ -69,7 +69,7 @@ class UserViewModel extends ChangeNotifier {
           onSuccess: (response) {
             UserObject user =
                 UserObject(id: response.user!.id!, token: response.jwt!);
-            _repository.saveUser(user);
+            _repository.saveUser(user).then((value) => Navigator.pushReplacementNamed(context, route));
           });
     }
   }

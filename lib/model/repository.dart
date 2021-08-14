@@ -40,8 +40,8 @@ class Repository {
         onError: onError);
   }
 
-  void saveUser(UserObject user) {
-    _localDataSource.saveUser(user);
+  Future<bool> saveUser(UserObject user) async {
+    return await _localDataSource.saveUser(user);
   }
 
   Future<UserObject> getUser() async {

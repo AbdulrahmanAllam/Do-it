@@ -1,10 +1,13 @@
+import 'package:do_it_flutter/model/local_data_source/shared_preferences/preferences/preferences.dart';
+import 'package:do_it_flutter/model/remote_data_source/network/apis/task_apis.dart';
 import 'package:do_it_flutter/model/remote_data_source/network/apis/user_apis.dart';
 import 'package:do_it_flutter/model/remote_data_source/network/responses/user_responses/login_response.dart';
 import 'package:do_it_flutter/model/remote_data_source/network/responses/user_responses/register_response.dart';
 import 'package:do_it_flutter/utils/enums/network_methods.dart';
 import '../network_services.dart';
 
-class Apis implements UserApis{
+class Apis implements UserApis, TaskApis{
+  Preferences _preferences = Preferences();
   @override
   void changePassword() {
     // TODO: implement changePassword
@@ -72,5 +75,28 @@ class Apis implements UserApis{
   @override
   void updateProfile() {
     // TODO: implement updateProfile
+  }
+
+  @override
+  void addTask() {
+    // TODO: implement addTask
+  }
+
+  @override
+  void deleteTask() {
+    // TODO: implement deleteTask
+  }
+
+  @override
+  void doneTask() {
+    // TODO: implement doneTask
+  }
+
+  @override
+  void getTasks() {}
+
+  @override
+  void updateTask() {
+    // TODO: implement updateTask
   }
 }

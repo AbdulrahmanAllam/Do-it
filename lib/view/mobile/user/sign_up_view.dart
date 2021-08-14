@@ -1,16 +1,18 @@
 import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/utils/widgets/custom_app_bar.dart';
 import 'package:do_it_flutter/utils/widgets/custom_text_form_field.dart';
+import 'package:do_it_flutter/view/mobile/user/profile_view.dart';
 import 'package:do_it_flutter/view_mode/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'auth_widgets.dart';
+import 'user_widgets.dart';
 
 class SignUpView extends StatelessWidget {
   static const String route = "SignUpView";
 
   @override
   Widget build(BuildContext context) {
+    UserWidgets authWidgets = UserWidgets();
     return ChangeNotifierProvider<UserViewModel>(
       create: (context) => UserViewModel(),
       child: Scaffold(
@@ -26,7 +28,6 @@ class SignUpView extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Consumer<UserViewModel>(builder: (context, viewModel, child) {
-            AuthWidgets authWidgets = AuthWidgets(viewModel: viewModel);
             return Form(
               key: viewModel.formKey,
               child: Padding(
@@ -34,11 +35,11 @@ class SignUpView extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 30,
+                      height: 50,
                     ),
                     authWidgets.logo(),
                     SizedBox(
-                      height: 30,
+                      height: 50,
                     ),
                     CustomTextFormField(
                       hintText: "user name",
@@ -58,7 +59,7 @@ class SignUpView extends StatelessWidget {
                       height: 50,
                     ),
                     authWidgets.signUpButton(onPressed: () {
-                      viewModel.signUp();
+                      viewModel.signUp(context: context,route: ProfileView.route);
                     }),
                     authWidgets.orDivider(),
                     authWidgets.loginButton(onPressed: () {

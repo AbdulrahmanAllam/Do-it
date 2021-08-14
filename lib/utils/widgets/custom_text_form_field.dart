@@ -6,25 +6,48 @@ class CustomTextFormField extends StatelessWidget {
   void Function(String?)? onSaved;
   IconData? icon;
   String? hintText;
+  int? maxLength;
+  int? maxLines;
 
-
-  CustomTextFormField({this.validator, this.onSaved, this.icon, this.hintText});
+  CustomTextFormField({this.validator, this.onSaved, this.icon, this.hintText, this.maxLength, this.maxLines});
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      cursorColor: AppColors.black,
-      validator:validator,
-      onSaved: onSaved,
-      decoration: InputDecoration(
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: AppColors.black),
-        ),
+    if (icon != null) {
+      return TextFormField(
+        cursorColor: AppColors.black,
+        validator: validator,
+        onSaved: onSaved,
+        maxLength: maxLength,
+        maxLines: maxLines,
+        decoration: InputDecoration(
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: AppColors.black),
+          ),
 
-        hintText: hintText,
-        prefixIcon: Icon(icon,color: AppColors.black,),
-        // icon: Icon(Icons.email),
-      ),
-    );
+          hintText: hintText,
+          prefixIcon: Icon(
+            icon,
+            color: AppColors.black,
+          ),
+          // icon: Icon(Icons.email),
+        ),
+      );
+    } else {
+      return TextFormField(
+        cursorColor: AppColors.black,
+        validator: validator,
+        onSaved: onSaved,
+        maxLength: maxLength,
+        maxLines: maxLines,
+        decoration: InputDecoration(
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: AppColors.black),
+          ),
+          hintText: hintText,
+          // icon: Icon(Icons.email),
+        ),
+      );
+    }
   }
 }

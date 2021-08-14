@@ -4,9 +4,9 @@ abstract class SharedPreferencesServices {
   static Future<SharedPreferences> get _prefs async =>
       await SharedPreferences.getInstance();
 
-  static void setString(String key, String value) async {
+  static Future<bool> setString(String key, String value) async {
     final prefs = await _prefs;
-    prefs.setString(key, value);
+    return prefs.setString(key, value);
   }
 
   static Future<String> getString(String key) async {

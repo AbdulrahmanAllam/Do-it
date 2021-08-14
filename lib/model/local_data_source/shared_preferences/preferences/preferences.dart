@@ -8,14 +8,13 @@ import '../shared_preferences_services.dart';
 class Preferences implements UserPreferences{
 
   @override
-  void saveUser(UserObject user) {
+  Future<bool> saveUser(UserObject user) async {
     Map<String, dynamic> map = {
       UserPreferencesConstants.userId: user.id,
       UserPreferencesConstants.userToken: user.token,
     };
     String data = jsonEncode(map);
-    SharedPreferencesServices.setString(UserPreferencesConstants.user, data);
-    Log.information("user saved");
+    return await SharedPreferencesServices.setString(UserPreferencesConstants.user, data).then((value) => Log.information("user saved"));
   }
 
   @override

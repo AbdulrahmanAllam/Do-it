@@ -5,8 +5,8 @@ import 'package:do_it_flutter/utils/log.dart';
 class LocalDataSource{
   Preferences _preferences = Preferences();
 
-  void saveUser(UserObject user){
-    _preferences.saveUser(user);
+  Future<bool> saveUser(UserObject user) async {
+    return await _preferences.saveUser(user);
   }
 
   Future<UserObject> getUser() async{

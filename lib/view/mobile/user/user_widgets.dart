@@ -5,9 +5,8 @@ import 'package:do_it_flutter/utils/widgets/cutom_material_button.dart';
 import 'package:do_it_flutter/view_mode/user_view_model.dart';
 import 'package:flutter/material.dart';
 
-class AuthWidgets {
-  late UserViewModel viewModel;
-  AuthWidgets({required this.viewModel});
+class UserWidgets {
+  UserViewModel viewModel = UserViewModel();
 
   Widget logo(){
     return Image.asset(AppImages.getPngImage("logo"),height: 100,);
@@ -38,28 +37,26 @@ class AuthWidgets {
   Widget orDivider(){
     return Row(
       children: [
-        Expanded(
-          child: Divider(
-            height: double.infinity,
-            thickness: 1 ,
-            color: AppColors.black,
-          ),
-        ),
+        _divider(),
         SizedBox(width: 10,),
         Text("or",style: TextStyle(fontSize: 15),),
         SizedBox(width: 10,),
-        Expanded(
-          child: Divider(
-            height: double.infinity,
-            thickness: 1 ,
-            color: AppColors.black,
-          ),
-        ),
+        _divider(),
       ],
     );
   }
 
   Widget signUpButton({required void Function()? onPressed}) {
     return CustomMaterialButton(onPressed: onPressed, text: "Sign Up",);
+  }
+
+  Widget _divider(){
+    return Expanded(
+      child: Divider(
+        height: 50,
+        thickness: 1 ,
+        color: AppColors.black,
+      ),
+    );
   }
 }
