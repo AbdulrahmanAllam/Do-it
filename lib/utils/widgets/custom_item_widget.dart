@@ -26,7 +26,7 @@ class CustomItemWidget extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () => tapOnIcon,
-          icon: Icon(icon),
+          icon: Icon(icon ?? Icons.circle),
           iconSize: 17,
           color: iconColor,
         ),
@@ -36,7 +36,7 @@ class CustomItemWidget extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Text(
-            "$text",
+            "${text ?? ''}",
             style: textStyle,
           ),
         ),

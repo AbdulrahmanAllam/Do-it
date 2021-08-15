@@ -14,6 +14,7 @@ class DrawerLayout extends StatelessWidget {
               },
               child: Text("categories"),
             ),
+            Text("Sign Out"),
           ],
         ),
       ),

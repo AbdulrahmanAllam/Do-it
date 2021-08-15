@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/utils/widgets/custom_item_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,8 +26,7 @@ class TaskWidgets {
   Widget _uncheckedTask() {
     return _task(
       text: "Task",
-      icon: Icons.circle,
-      iconColor: Colors.amber,
+      iconColor: Color(Random().nextInt(0xffffffff)),
       tapOnIcon: () {/* check task*/},
     );
   }
@@ -36,7 +37,7 @@ class TaskWidgets {
       textStyle: TextStyle(
           color: AppColors.grey, decoration: TextDecoration.lineThrough),
       icon: Icons.check_circle_rounded,
-      iconColor: Colors.green,
+      iconColor: Color(Random().nextInt(0xffffffff)),
       tapOnIcon: () {/* un check task*/},
     );
   }
