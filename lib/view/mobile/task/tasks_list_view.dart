@@ -1,6 +1,6 @@
 import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/utils/widgets/custom_app_bar.dart';
-import 'package:do_it_flutter/view/mobile/layers/drawer_layer.dart';
+import 'package:do_it_flutter/view/mobile/layouts/drawer_layout.dart';
 import 'package:do_it_flutter/view/mobile/task/add_task_view.dart';
 import 'package:do_it_flutter/view/mobile/task/task_widgets.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +12,7 @@ class TasksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     TaskWidgets taskWidgets = TaskWidgets();
     return Scaffold(
-      drawer: DrawerLayer(),
+      drawer: DrawerLayout(),
       appBar: customAppBar(
           title: "All Tasks",
           actions: [IconButton(onPressed: () {}, icon: Icon(Icons.delete))]),

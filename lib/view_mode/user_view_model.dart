@@ -1,4 +1,3 @@
-import 'package:do_it_flutter/model/objects/user_object.dart';
 import 'package:do_it_flutter/model/repository.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -44,35 +43,6 @@ class UserViewModel extends ChangeNotifier {
       return "this field is required";
     } else if (userName.length < 2) {
       return "user name length must be more than 2";
-    }
-  }
-
-  void login({required BuildContext context, required String route}) {
-    if (_formValidate()) {
-      _repository.login(
-          email: _email!,
-          password: _password!,
-          onSuccess: (response) {
-            UserObject user =
-                UserObject(id: response.user!.id!, token: response.jwt!);
-            _repository.saveUser(user).then(
-                (value) => Navigator.pushReplacementNamed(context, route));
-          });
-    }
-  }
-
-  void signUp({required BuildContext context, required String route}) {
-    if (_formValidate()) {
-      _repository.signUp(
-          userName: _userName!,
-          email: _email!,
-          password: _password!,
-          onSuccess: (response) {
-            UserObject user =
-                UserObject(id: response.user!.id!, token: response.jwt!);
-            _repository.saveUser(user).then(
-                (value) => Navigator.pushReplacementNamed(context, route));
-          });
     }
   }
 

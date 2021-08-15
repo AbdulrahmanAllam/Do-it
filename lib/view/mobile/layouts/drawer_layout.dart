@@ -1,8 +1,7 @@
 import 'package:do_it_flutter/view/mobile/category/categoryies_list_view.dart';
 import 'package:flutter/material.dart';
 
-class DrawerLayer extends StatelessWidget {
-
+class DrawerLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(

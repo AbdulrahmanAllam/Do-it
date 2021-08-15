@@ -1,6 +1,6 @@
-class CategoryApis {
-  void addCategory() {}
-  void deleteCategory() {}
-  void updateCategory() {}
-  void getCategories() {}
+abstract class CategoryApis {
+  void addCategory();
+  void deleteCategory();
+  void updateCategory();
+  void getCategories();
 }

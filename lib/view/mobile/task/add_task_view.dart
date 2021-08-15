@@ -13,7 +13,9 @@ class AddTaskView extends StatelessWidget {
       appBar: customAppBar(title: "Add New Task"),
       body: SingleChildScrollView(
         child: Container(
-          height: MediaQuery.of(context).size.height - AppBar().preferredSize.height - MediaQuery.of(context).padding.top,
+          height: MediaQuery.of(context).size.height -
+              AppBar().preferredSize.height -
+              MediaQuery.of(context).padding.top,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(

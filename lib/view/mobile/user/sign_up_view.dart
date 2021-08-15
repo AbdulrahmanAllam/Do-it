@@ -2,10 +2,10 @@ import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/utils/app_height.dart';
 import 'package:do_it_flutter/utils/widgets/custom_app_bar.dart';
 import 'package:do_it_flutter/utils/widgets/custom_text_form_field.dart';
-import 'package:do_it_flutter/view/mobile/user/profile_view.dart';
 import 'package:do_it_flutter/view_mode/user_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'user_widgets.dart';
 
 class SignUpView extends StatelessWidget {
@@ -50,11 +50,11 @@ class SignUpView extends StatelessWidget {
                     authWidgets.passwordField(),
                     AppHeight.h50,
                     authWidgets.signUpButton(onPressed: () {
-                      viewModel.signUp(
-                          context: context, route: ProfileView.route);
+                      //TODO: sign up
                     }),
                     authWidgets.orDivider,
                     authWidgets.loginButton(onPressed: () {
+                      //TODO: Log In
                       Navigator.pop(context);
                     }),
                   ],
