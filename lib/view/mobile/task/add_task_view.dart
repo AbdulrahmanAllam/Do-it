@@ -1,7 +1,7 @@
 import 'package:do_it_flutter/utils/app_height.dart';
-import 'package:do_it_flutter/utils/widgets/custom_app_bar.dart';
-import 'package:do_it_flutter/utils/widgets/custom_text_form_field.dart';
-import 'package:do_it_flutter/utils/widgets/cutom_material_button.dart';
+import 'package:do_it_flutter/view/mobile/widgets/custom_app_bar.dart';
+import 'package:do_it_flutter/view/mobile/widgets/custom_text_form_field.dart';
+import 'package:do_it_flutter/view/mobile/widgets/cutom_material_button.dart';
 import 'package:flutter/material.dart';
 
 class AddTaskView extends StatelessWidget {

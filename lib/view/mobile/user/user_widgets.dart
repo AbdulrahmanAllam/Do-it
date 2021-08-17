@@ -1,7 +1,7 @@
 import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/utils/app_images.dart';
-import 'package:do_it_flutter/utils/widgets/custom_text_form_field.dart';
-import 'package:do_it_flutter/utils/widgets/cutom_material_button.dart';
+import 'package:do_it_flutter/view/mobile/widgets/custom_text_form_field.dart';
+import 'package:do_it_flutter/view/mobile/widgets/cutom_material_button.dart';
 import 'package:do_it_flutter/view_mode/user_view_model.dart';
 import 'package:flutter/material.dart';
 

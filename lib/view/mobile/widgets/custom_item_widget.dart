@@ -1,6 +1,5 @@
+import 'package:do_it_flutter/utils/app_width.dart';
 import 'package:flutter/material.dart';
-
-import '../app_width.dart';
 
 class CustomItemWidget extends StatelessWidget {
   void Function()? deleteItem;

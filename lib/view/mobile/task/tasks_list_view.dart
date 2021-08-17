@@ -1,8 +1,8 @@
 import 'package:do_it_flutter/utils/app_colors.dart';
-import 'package:do_it_flutter/utils/widgets/custom_app_bar.dart';
 import 'package:do_it_flutter/view/mobile/layouts/drawer_layout.dart';
 import 'package:do_it_flutter/view/mobile/task/add_task_view.dart';
 import 'package:do_it_flutter/view/mobile/task/task_widgets.dart';
+import 'package:do_it_flutter/view/mobile/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 

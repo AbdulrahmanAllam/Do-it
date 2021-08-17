@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:do_it_flutter/utils/app_colors.dart';
-import 'package:do_it_flutter/utils/widgets/custom_item_widget.dart';
+import 'package:do_it_flutter/view/mobile/widgets/custom_item_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

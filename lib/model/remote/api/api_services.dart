@@ -1,12 +1,11 @@
 import 'dart:convert';
-
 import 'package:dio/dio.dart';
-import 'package:do_it_flutter/model/remote_data_source/network/responses/base_response.dart';
+import 'package:do_it_flutter/model/remote/api/responses/base_response.dart';
 import 'package:do_it_flutter/utils/enums/network_methods.dart';
 import 'package:do_it_flutter/utils/extension_methods/network_methods_extension_methods.dart';
 import 'package:do_it_flutter/utils/log.dart';
 
-abstract class NetworkServices {
+abstract class ApiServices {
   static Map<String, dynamic> _headers = {"Accept": "application/json"};
 
   static BaseOptions _baseOptions = BaseOptions(

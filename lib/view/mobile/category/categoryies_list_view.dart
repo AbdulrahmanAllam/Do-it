@@ -1,5 +1,5 @@
-import 'package:do_it_flutter/utils/widgets/custom_app_bar.dart';
 import 'package:do_it_flutter/view/mobile/category/category_widgets.dart';
+import 'package:do_it_flutter/view/mobile/widgets/custom_app_bar.dart';
 import 'package:do_it_flutter/view_mode/category_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
