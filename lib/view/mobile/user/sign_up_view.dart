@@ -1,5 +1,6 @@
 import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/utils/app_height.dart';
+import 'package:do_it_flutter/view/mobile/task/tasks_list_view.dart';
 import 'package:do_it_flutter/view/mobile/widgets/custom_app_bar.dart';
 import 'package:do_it_flutter/view/mobile/widgets/custom_text_form_field.dart';
 import 'package:do_it_flutter/view_mode/user_view_model.dart';
@@ -45,16 +46,21 @@ class SignUpView extends StatelessWidget {
                       onSaved: (value) => viewModel.userName = value,
                     ),
                     AppHeight.h20,
-                    authWidgets.emailField(),
+                    authWidgets.emailField(
+                      validator: (value) => viewModel.validateEmail(value),
+                      onSaved: (value) => viewModel.email = value,
+                    ),
                     AppHeight.h20,
-                    authWidgets.passwordField(),
+                    authWidgets.passwordField(
+                      validator: (value) => viewModel.validatePassword(value),
+                      onSaved: (value) => viewModel.password = value,
+                    ),
                     AppHeight.h50,
                     authWidgets.signUpButton(onPressed: () {
-                      //TODO: sign up
+                      viewModel.signUp(context: context,nextPageRoute: TasksListView.route);
                     }),
                     authWidgets.orDivider,
                     authWidgets.loginButton(onPressed: () {
-                      //TODO: Log In
                       Navigator.pop(context);
                     }),
                   ],

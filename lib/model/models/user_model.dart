@@ -1,9 +1,29 @@
 import 'package:do_it_flutter/utils/log.dart';
+import 'package:flutter/material.dart';
 
 class UserModel {
   late int _id;
-  late String _token;
-  String? _name;
-  String? _email;
-  String? _image;
+  late String _jwt;
+  late String _name;
+  late String _email;
+
+  UserModel({required int id, required String jwt, required String name, required String email}){
+    this.id = id;
+    this.jwt = jwt;
+    this.email = email;
+    this.name = name;
+  }
+
+  int get id => _id;
+  set id(int value) => _id = value;
+
+  String get jwt => _jwt;
+  set jwt(String value) => _jwt = value;
+
+  String get name => _name;
+  set name(String value) => _name = value;
+
+  String get email => _email;
+  set email(String value) => _email = value;
+  
 }

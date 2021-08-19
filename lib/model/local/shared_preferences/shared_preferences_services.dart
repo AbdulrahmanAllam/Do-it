@@ -1,3 +1,4 @@
+import 'package:do_it_flutter/utils/log.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class SharedPreferencesServices {
@@ -9,9 +10,9 @@ abstract class SharedPreferencesServices {
     return prefs.setString(key, value);
   }
 
-  static Future<String> getString(String key) async {
+  static Future<String?> getString(String key) async {
     final prefs = await _prefs;
-    return prefs.getString(key) ?? "";
+    return prefs.getString(key);
   }
 
   static void reload() async {
@@ -19,13 +20,13 @@ abstract class SharedPreferencesServices {
     prefs.reload();
   }
 
-  static void remove(String key) async {
+  static Future<bool> remove(String key) async {
     final prefs = await _prefs;
-    prefs.remove(key);
+    return prefs.remove(key);
   }
 
-  static void clear() async {
+  static Future<bool> clear() async {
     final prefs = await _prefs;
-    prefs.clear();
+    return prefs.clear();
   }
 }

@@ -15,21 +15,21 @@ class UserWidgets {
     );
   }
 
-  Widget emailField() {
+  Widget emailField({String? Function(String?)? validator, void Function(String?)? onSaved}) {
     return CustomTextFormField(
       hintText: "email",
       icon: Icons.email,
-      validator: (value) => viewModel.validateEmail(value),
-      onSaved: (value) => viewModel.email = value,
+      validator: validator,
+      onSaved: onSaved,
     );
   }
 
-  Widget passwordField() {
+  Widget passwordField({String? Function(String?)? validator, void Function(String?)? onSaved}) {
     return CustomTextFormField(
       hintText: "password",
       icon: Icons.lock,
-      validator: (value) => viewModel.validatePassword(value),
-      onSaved: (value) => viewModel.password = value,
+      validator: validator,
+      onSaved: onSaved,
     );
   }
 

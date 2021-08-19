@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:do_it_flutter/model/remote/api/responses/base_response.dart';
 import 'package:do_it_flutter/utils/enums/network_methods.dart';
@@ -38,8 +39,10 @@ abstract class ApiServices {
     CancelToken? cancelToken,
     void Function(int, int)? onSendProgress,
     void Function(int, int)? onReceiveProgress,
+    void Function()? onConnectionError,
   }) async {
     try {
+      await InternetAddress.lookup('google.com');
       Response response = await _dio.request(
         endpoint,
         queryParameters: queryParameters,
@@ -67,6 +70,11 @@ abstract class ApiServices {
         if (onError != null) {
           onError(dioError.message);
         }
+      }
+    } on SocketException catch(e){
+      Log.error("connection error");
+      if(onConnectionError != null){
+        onConnectionError();
       }
     }
   }

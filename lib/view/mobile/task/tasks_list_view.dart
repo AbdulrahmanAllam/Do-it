@@ -16,7 +16,7 @@ class TasksListView extends StatelessWidget {
       drawer: DrawerLayout(),
       appBar: customAppBar(
           title: "All Tasks",
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.delete))]),
+          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.person))]),
       body: Column(
         children: [
           Padding(

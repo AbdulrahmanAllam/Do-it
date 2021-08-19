@@ -30,14 +30,18 @@ class LogInView extends StatelessWidget {
                     AppHeight.h50,
                     userWidgets.logo(),
                     AppHeight.h50,
-                    userWidgets.emailField(),
+                    userWidgets.emailField(
+                      validator: (value) => viewModel.validateEmail(value),
+                      onSaved: (value) => viewModel.email = value,
+                    ),
                     AppHeight.h20,
-                    userWidgets.passwordField(),
+                    userWidgets.passwordField(
+                      validator: (value) => viewModel.validatePassword(value),
+                      onSaved: (value) => viewModel.password = value,
+                    ),
                     AppHeight.h50,
                     userWidgets.loginButton(onPressed: () {
-                      //viewModel.login(context: context,route: ProfileView.route);
-                      Navigator.pushReplacementNamed(
-                          context, TasksListView.route);
+                       viewModel.logIn(context: context, nextPageRoute: TasksListView.route);
                     }),
                     userWidgets.orDivider,
                     userWidgets.signUpButton(onPressed: () {

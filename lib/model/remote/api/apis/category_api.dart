@@ -1,6 +1,6 @@
-abstract class CategoryApis {
-  void addCategory();
-  void deleteCategory();
-  void updateCategory();
-  void getCategories();
+mixin CategoryApis {
+  void addCategory(){}
+  void deleteCategory(){}
+  void updateCategory(){}
+  void getCategories(){}
 }

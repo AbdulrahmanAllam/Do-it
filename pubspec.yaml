@@ -41,7 +41,7 @@ dependencies:
 
   device_preview:
 
-  http:
+  
 
 dev_dependencies:
   flutter_test:

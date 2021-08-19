@@ -1,7 +1,7 @@
-abstract class TaskApis {
-  void addTask();
-  void doneTask();
-  void updateTask();
-  void deleteTask();
-  void getTasks();
+mixin TaskApis {
+  void addTask(){}
+  void doneTask(){}
+  void updateTask(){}
+  void deleteTask(){}
+  void getTasks(){}
 }
