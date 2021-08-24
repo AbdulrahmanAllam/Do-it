@@ -3,9 +3,9 @@ import 'dart:math';
 import 'package:do_it_flutter/model/remote/api/api_services.dart';
 import 'package:do_it_flutter/model/remote/api/responses/user_responses/login_response.dart';
 import 'package:do_it_flutter/model/remote/api/responses/user_responses/sign_up_response.dart';
-import 'package:do_it_flutter/utils/enums/network_methods.dart';
+import 'package:do_it_flutter/utils/enums/api_methods.dart';
 
-mixin UserApis {
+class UserApis {
   void signUp(
       {required String userName,
       required String email,
@@ -24,8 +24,8 @@ mixin UserApis {
     
     ApiServices.sendRequest<SignUpResponse>(
       endpoint: "auth/local/register",
-      method: NetworkMethods.POST,
-      responseType: SignUpResponse(),
+      method: ApiMethods.POST,
+      responseObject: SignUpResponse(),
       requestName: "Sign Up",
       data: data,
       onSuccess: onSuccess,
@@ -51,9 +51,9 @@ mixin UserApis {
 
     ApiServices.sendRequest<LoginResponse>(
       endpoint: "auth/local",
-      method: NetworkMethods.POST,
+      method: ApiMethods.POST,
       requestName: "Log In",
-      responseType: LoginResponse(),
+      responseObject: LoginResponse(),
       data: data,
       onSuccess: onSuccess,
       onResponseError: onResponseError,

@@ -39,6 +39,8 @@ dependencies:
 
   percent_indicator:
 
+  http:
+
   device_preview:
 
   

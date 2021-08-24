@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
+import 'package:http/http.dart' as http;
 
 class Log {
   static Logger _logger = Logger();
@@ -26,9 +27,17 @@ class Log {
     Log.information(
         "method : ${response.requestOptions.method} \n URL : ${response.realUri}");
     Log.debug(
-        "status code : ${response.statusCode} \n status message : ${response.statusMessage} \n response $response");
+        "status code : ${response.statusCode} \n status message : ${response.statusMessage} \n response ${response.toString()}");
     Log.information(
         "------------------------------End ($requestName) Request------------------------------");
+  }
+
+  static void httpSuccess({required String requestName, required http.Response response}){
+    Log.debug("start ($requestName)\nrequest name : ($response)\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName)");
+  }
+
+  static void httpError({required String requestName, required http.Response response}){
+    Log.error("start ($requestName)\nrequest name : ($response)\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName)");
   }
 
   static void onResponseError(String requestName, DioError error) {

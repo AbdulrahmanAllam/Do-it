@@ -28,7 +28,7 @@ class UserViewModel extends ChangeNotifier {
       {required UserModel user,
       required BuildContext context,
       required String nextPageRoute}) {
-    _repository.saveUser(userModel: user).then((value) {
+    _repository.saveUser(user: user).then((value) {
       Navigator.pushReplacementNamed(context, nextPageRoute);
     });
   }

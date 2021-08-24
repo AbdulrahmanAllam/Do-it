@@ -4,7 +4,7 @@ import 'package:do_it_flutter/model/local/shared_preferences/shared_preferences_
 import 'package:do_it_flutter/model/local/shared_preferences/shared_preferences_services.dart';
 import 'package:do_it_flutter/model/models/user_model.dart';
 
-mixin UserPreferences {
+class UserPreferences {
   Future<bool> saveUser({required UserModel userModel}) {
     Map<String, dynamic> user = {
       UserPreferencesConstants.userId: userModel.id,

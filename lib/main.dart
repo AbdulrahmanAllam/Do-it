@@ -1,5 +1,6 @@
 import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/utils/routes.dart';
+import 'package:do_it_flutter/view/mobile/layouts/splash_screen.dart';
 import 'package:do_it_flutter/view/mobile/user/log_in_view.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
             elevation: 0.0,
           ),
           scaffoldBackgroundColor: AppColors.white),
-      initialRoute: LogInView.route,
+      initialRoute: SplashScreen.route,
       routes: routes,
     );
   }
