@@ -5,15 +5,14 @@ import 'api/responses/user_responses/login_response.dart';
 import 'api/responses/user_responses/sign_up_response.dart';
 
 class UserRemoteDataSource {
-  UserApis _apis = UserApis();
+  final UserApis _apis = UserApis();
 
   void signUp({
     required String userName,
     required String email,
     required String password,
     Function(SignUpResponse)? onSuccess,
-    Function(String?, int?)? onResponseError,
-    Function(String?)? onError,
+    Function(int?)? onError,
     void Function()? onConnectionError,
   }) {
     _apis.signUp(
@@ -21,7 +20,6 @@ class UserRemoteDataSource {
       email: email,
       password: password,
       onSuccess: onSuccess,
-      onResponseError: onResponseError,
       onError: onError,
       onConnectionError: onConnectionError,
     );
@@ -31,15 +29,13 @@ class UserRemoteDataSource {
     required String email,
     required String password,
     Function(LoginResponse)? onSuccess,
-    Function(String?, int?)? onResponseError,
-    Function(String?)? onError,
+    Function(int?)? onError,
     void Function()? onConnectionError,
   }) {
     _apis.logIn(
         email: email,
         password: password,
         onSuccess: onSuccess,
-        onResponseError: onResponseError,
         onError: onError,
         onConnectionError: onConnectionError);
   }

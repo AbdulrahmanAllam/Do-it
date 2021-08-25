@@ -9,14 +9,21 @@ class TaskViewModel extends ChangeNotifier{
   List<GetTasksResponse>? tasks;
 
   Future<List<GetTasksResponse>>? getTasks() async{
-    await ApiServices.httpR();
+    // await ApiServices.httpR();
     // await _repository.getTasks(
     //   onSuccess: (data){
     //     print("data => $data");
     //     tasks = data;
     //   }
     // );
-    print("tasks => $tasks");
+    await _repository.getTasks(
+      onSuccess: (data){
+        print("tasks1 => $data");
+        tasks = data;
+        return tasks!;
+      }
+    );
+    print("tasks2 => $tasks");
     return tasks!;
   }
 }

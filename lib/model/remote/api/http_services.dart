@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:do_it_flutter/utils/log.dart';
 import 'package:http/http.dart' as http;
@@ -37,6 +38,23 @@ class HttpServices {
 
     _request(
         futureResponse: http.get(url, headers: headers),
-        requestName: requestName);
+        requestName: requestName,onSuccess: onSuccess,onConnectionError: onConnectionError,onError: onError);
+  }
+
+  post(
+      {required String endpoint,
+      required String requestName,
+      Map<String, String>? headers,
+      Object? body,
+      Encoding? encoding,
+      Function(String)? onSuccess,
+      Function(int)? onError,
+      Function()? onConnectionError}) async {
+    Uri url = Uri.parse(_baseUrl + endpoint);
+
+    _request(
+        futureResponse:
+            http.post(url, headers: headers, body: body, encoding: encoding),
+        requestName: requestName,onError: onError, onConnectionError: onConnectionError, onSuccess: onSuccess);
   }
 }

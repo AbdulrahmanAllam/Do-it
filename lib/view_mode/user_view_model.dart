@@ -1,10 +1,10 @@
 import 'package:do_it_flutter/model/models/user_model.dart';
-import 'package:do_it_flutter/model/repository.dart';
+import 'package:do_it_flutter/model/repositories/user_repository.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UserViewModel extends ChangeNotifier {
-  final Repository _repository = Repository();
+  final UserRepository _repository = UserRepository();
   final _formKey = GlobalKey<FormState>();
   String? _userName;
   String? _email;
@@ -73,13 +73,10 @@ class UserViewModel extends ChangeNotifier {
             _onAuthSuccess(
                 user: user, context: context, nextPageRoute: nextPageRoute);
           },
-          onResponseError: (error, errorCode) {
+          onError: (errorCode) {
             if (errorCode == 400) {
               _message(context: context, text: "email or password are false");
             }
-          },
-          onError: (error) {
-            _message(context: context, text: "something wrong happened");
           },
           onConnectionError: () => _message(context: context, text: "check your connection")
           );
@@ -102,14 +99,11 @@ class UserViewModel extends ChangeNotifier {
             _onAuthSuccess(
                 user: user, context: context, nextPageRoute: nextPageRoute);
           },
-          onResponseError: (error, errorCode) {
+          onError: (errorCode) {
             if (errorCode == 400) {
               _message(
                   context: context, text: "username or email are already used");
             }
-          },
-          onError: (error) {
-            _message(context: context, text: "something wrong happened");
           },
           onConnectionError: () => _message(context: context, text: "check your connection")
           );

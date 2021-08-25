@@ -1,12 +1,12 @@
 import 'package:do_it_flutter/model/remote/api/responses/base_response.dart';
 
-class SignUpResponse implements BaseResponse {
+class SignUpResponse{
   String? jwt;
   SignUpResponseUser? user;
 
   SignUpResponse({this.jwt, this.user});
 
-  fromJson(Map<String, dynamic> json) {
+  SignUpResponse.fromJson(Map<String, dynamic> json) {
     jwt = json['jwt'];
     user = json['user'] != null
         ? new SignUpResponseUser.fromJson(json['user'])

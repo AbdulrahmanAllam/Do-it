@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _goTo(){
-    _userRepository.getUser().then((value) {
+    _userRepository.getUser.then((value) {
       if(value == null){
        Navigator.pushReplacementNamed(context, LogInView.route);
       }

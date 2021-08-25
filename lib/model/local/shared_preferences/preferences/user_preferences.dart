@@ -17,7 +17,7 @@ class UserPreferences {
         UserPreferencesConstants.user, data);
   }
 
-  Future<UserModel?> getUser() async {
+  Future<UserModel?> get getUser async {
     String? data = await SharedPreferencesServices.getString(
         UserPreferencesConstants.user);
     if (data != null) {

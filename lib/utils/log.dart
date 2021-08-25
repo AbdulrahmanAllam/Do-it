@@ -33,11 +33,11 @@ class Log {
   }
 
   static void httpSuccess({required String requestName, required http.Response response}){
-    Log.debug("start ($requestName)\nrequest name : ($response)\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName)");
+    Log.debug("start ($requestName) request\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName) request");
   }
 
   static void httpError({required String requestName, required http.Response response}){
-    Log.error("start ($requestName)\nrequest name : ($response)\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName)");
+    Log.error("start ($requestName) request\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName) request");
   }
 
   static void onResponseError(String requestName, DioError error) {
