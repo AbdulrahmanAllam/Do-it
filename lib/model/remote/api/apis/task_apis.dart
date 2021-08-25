@@ -10,16 +10,16 @@ class TaskApis {
   void doneTask() {}
   void updateTask() {}
   void deleteTask() {}
-  void getTasks({
+  Future<void> getTasks({
     required String jwt,
     Function(List<GetTasksResponse>)? onSuccess,
     Function(int)? onError,
     Function()? onConnectionError,
-  }) {
+  }) async {
     Map<String, String> headers = {
       "Authorization": "Bearer $jwt",
     };
-    _httpServices.get(
+    await _httpServices.get(
       endpoint: "tasks",
       requestName: "get tasks",
       headers: headers,

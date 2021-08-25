@@ -7,12 +7,8 @@ class UserModel {
   late String _name;
   late String _email;
 
-  UserModel({required int id, required String jwt, required String name, required String email}){
-    this.id = id;
-    this.jwt = jwt;
-    this.email = email;
-    this.name = name;
-  }
+  UserModel({required int id, required String jwt, required String name, required String email})
+      :_id = id, _jwt = jwt, _name = name, _email = email;
 
   int get id => _id;
   set id(int value) => _id = value;

@@ -1,3 +1,4 @@
+import 'package:do_it_flutter/model/models/task_model.dart';
 import 'package:do_it_flutter/model/remote/api/responses/task_responses/get_tasks_response.dart';
 import 'package:do_it_flutter/utils/app_colors.dart';
 import 'package:do_it_flutter/view/mobile/layouts/drawer_layout.dart';
@@ -28,15 +29,16 @@ class TasksListView extends StatelessWidget {
             ProgressBar(),
             Consumer<TaskViewModel>(
               builder: (context, viewModel, child){
-                return FutureBuilder<List<GetTasksResponse>>(
+                return FutureBuilder<List<TaskModel>>(
                   future: viewModel.getTasks(),
-                  builder:(context, AsyncSnapshot<List<GetTasksResponse>> snapshot){
+                  builder:(context, AsyncSnapshot<List<TaskModel>> snapshot){
                     if(snapshot.hasData && snapshot.data != null){
+                      print("color : ${Color(0xFFFF3D00).value}");
                       return Expanded(
                         child: ListView.builder(
-                          itemCount: 20,
-                          // itemBuilder: (context, index) => taskWidgets.taskItem(index),
-                          itemBuilder: (context, index) => Text("${snapshot.data?[index].title}"),
+                          itemCount: viewModel.tasks?.length,
+                          itemBuilder: (context, index) => taskWidgets.taskItem(snapshot.data![index]),
+                          // itemBuilder: (context, index) => Text("${snapshot.data?[index].title}"),
                         ),
                       );
                     }

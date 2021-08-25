@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class HttpServices {
   final String _baseUrl = "http://192.168.1.6:1337/";
 
-  _request(
+  Future<void> _request(
       {required Future<http.Response> futureResponse,
       required String requestName,
       Function(String)? onSuccess,
@@ -27,7 +27,7 @@ class HttpServices {
     }
   }
 
-  get(
+  Future<void> get(
       {required String endpoint,
       required String requestName,
       Map<String, String>? headers,
@@ -36,7 +36,7 @@ class HttpServices {
       Function()? onConnectionError}) async {
     Uri url = Uri.parse(_baseUrl + endpoint);
 
-    _request(
+    await _request(
         futureResponse: http.get(url, headers: headers),
         requestName: requestName,onSuccess: onSuccess,onConnectionError: onConnectionError,onError: onError);
   }

@@ -5,13 +5,13 @@ import 'api/responses/task_responses/get_tasks_response.dart';
 class TaskRemoteDataSource {
   final TaskApis _apis = TaskApis();
   
-  getTasks({
+  Future<void> getTasks({
     required String jwt,
     Function(List<GetTasksResponse>)? onSuccess,
     Function(int)? onError,
     Function()? onConnectionError,
-  }) {
-    _apis.getTasks(
+  }) async {
+    await _apis.getTasks(
         jwt: jwt,
         onSuccess: onSuccess,
         onConnectionError: onConnectionError,
